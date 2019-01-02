@@ -7,6 +7,6 @@ node{
 	 echo "build is success"
 	 }
 	 stage('deploy'){
-	 echo " deploy"
+	 echo " test and deploy "
 }
 }
