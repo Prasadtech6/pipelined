@@ -1,0 +1,9 @@
+node{
+    stage('Checkout'){
+        properties([pipelineTriggers([githubPush()])])
+         checkout(scm)
+	 }
+	 stage('build'){
+	 echo "build is success"
+	 }
+	 }
