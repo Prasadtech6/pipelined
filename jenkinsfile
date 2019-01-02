@@ -6,4 +6,7 @@ node{
 	 stage('build'){
 	 echo "build is success"
 	 }
-	 }
+	 stage('deploy'){
+	 echo " deploy"
+}
+}
