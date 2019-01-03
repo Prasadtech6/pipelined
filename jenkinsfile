@@ -10,6 +10,6 @@ node{
 	 echo " test and deploy "
 	}
 	stage('email notify'){
-	emailext attachLog: true, body: 'job $job has been triggered', compressLog: true, subject: 'Email notification', to: 'sudhaprasadreddy7@gmail.com'
+	emailext attachLog: true, body: 'job $job has been triggered', compressLog: true, subject: 'Email notification', to: 'prasadtech6@gmail.com'
 	}
 }
