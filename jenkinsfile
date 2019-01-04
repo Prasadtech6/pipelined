@@ -1,4 +1,4 @@
-def isStartedByUser = currentBuild.rawBuild.gerCause(hudson.model.Cause$UserIdCause) != null
+def userId = build.getCause(Cause.UserIdCause).getUserId()
 node{
     stage('Checkout'){
         properties([pipelineTriggers([githubPush()])])
