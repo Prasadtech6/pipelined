@@ -1,17 +1,16 @@
-def getBuildUser() {
-    return currentBuild.rawBuild.getCause(Cause.UserIdCause).getUserId()
-}
+
 node{
     stage('Checkout'){
         properties([pipelineTriggers([githubPush()])])
          checkout(scm)
 	 }
 	 stage('build'){
+	 when { triggeredBy 'SCMTrigger' }
 	 echo "build is success"
 	 }
 	 stage('deploy'){
 	 echo " test and deploy "
-	 echo "${BUILD_CAUSE}"
+
 	}
 	stage('email notify'){
 	emailext attachLog: true, body: 'job $job has been triggered', compressLog: true, subject: 'Email notification', to: 'prasadtechi6@gmail.com'
