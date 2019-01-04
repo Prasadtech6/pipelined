@@ -9,8 +9,14 @@ node{
 	 stage('deploy'){
 	 echo " test and deploy "
 	}
+	{
+   when {
+    Started by "SCM change"
+   }
 	stage('email notify'){
 	emailext attachLog: true, body: 'job $job has been triggered', compressLog: true, subject: 'Email notification', to: 'prasadtechi6@gmail.com'
 	}
-
+ when {
+    Started by "SCM change"
+   }
 }
