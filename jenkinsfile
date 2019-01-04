@@ -1,4 +1,6 @@
-def userId = build.getCause(Cause.UserIdCause).getUserId()
+def getBuildUser() {
+    return currentBuild.rawBuild.getCause(Cause.UserIdCause).getUserId()
+}
 node{
     stage('Checkout'){
         properties([pipelineTriggers([githubPush()])])
