@@ -5,7 +5,7 @@ node{
          checkout(scm)
 	 }
 	 stage('build'){
-	 when { triggeredBy "TimerTrigger" }
+	 
 	 echo "build is success"
 	 }
 	 stage('deploy'){
