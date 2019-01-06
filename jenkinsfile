@@ -1,9 +1,9 @@
-Stages {
-Stage {
+stages {
+stage {
 When {
 expression { params.build_user_id == 'admin ' } 
 } 
-Steps{
+steps{
 Echo "${build_user_id}" 
 }
 }
