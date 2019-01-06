@@ -3,8 +3,6 @@
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
 
-def specificCause = currentBuild.rawBuild.getCause(hudson.model.Cause$UserIdCause)
-
 node () {
 echo "Jenkinsfile"
   wrap([$class: 'BuildUser']) {
