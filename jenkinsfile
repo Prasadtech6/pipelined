@@ -1,23 +1,30 @@
+#!groovy
 
-node{
-    stage('Checkout'){
-        properties([pipelineTriggers([githubPush()])])
-         checkout(scm)
-	 }
-	 stage('build'){
-	 echo "${currentBuild.buildCauses}" // same as currentBuild.getBuildCauses()
-	 echo "${currentBuild.getBuildCauses('hudson.model.Cause$UserCause')}"
-	 echo "${currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause')}"
-	 
-	 echo "build is success"
-	 }
-	 stage('deploy'){
-	 when{
-	 triggeredBy "SCMTrigger"
-	 }
-	 echo " test and deploy "
-	}
-	stage('email notify'){
-	emailext attachLog: true, body: 'job $job has been triggered', compressLog: true, subject: 'Email notification', to: 'prasadtechi6@gmail.com'
-	}
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+node () {
+  wrap([$class: 'BuildUser']) {
+    def user = env.BUILD_USER_ID
+      if  (env.BUILD_USER_ID == 'admin'){
+       build()
+       sonarcube() 
+       deploy() 
+      }
 }
+}
+     def build () {
+         stage 'Build'
+          echo "building the job"
+}
+
+     def sonarcube () {
+         stage 'sonarcube'
+          echo "code analusys on the job"
+}
+
+     def deploy () {
+         stage 'deploy'
+          echo "Deploying the code to QA"
+          echo " job ran successfully"
+}
+
