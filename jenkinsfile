@@ -15,3 +15,13 @@ node () {
           echo "building the job"
 }
 
+def sonarcube () {
+         stage 'sonarcube'
+          echo "code analusys on the job"
+}
+
+def deploy () {
+         stage 'deploy'
+          echo "Deploying the code to QA"
+}
+
