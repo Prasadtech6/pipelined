@@ -15,23 +15,19 @@ echo "Jenkinsfile"
 }
 }
      def build () {
-       stages{
-         stage 'Build'{
+          stage 'Build'
           echo "building the job"
-         }
+         
 }
 
      def sonarcube () {
-       stages{
-         stage 'sonarcube'{
-           echo "code analusys on the job"}
+           stage 'sonarcube'
+           echo "code analusys on the job"
 }
 
      def deploy () {
-       stages{
-         stage 'deploy'{
+           stage 'deploy'
           echo "Deploying the code to QA"
-           echo " job ran successfully"}
+           echo " job ran successfully"
 }
-}
-}
+
