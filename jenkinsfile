@@ -1,26 +1,18 @@
-pipeline{
-node{
-stages{
-    stage('Checkout'){
-        properties([pipelineTriggers([githubPush()])])
-         checkout(scm)
-	 }
-	 stage('build'){
-	 echo "${currentBuild.buildCauses}" // same as currentBuild.getBuildCauses()
-	 echo "${currentBuild.getBuildCauses('hudson.model.Cause$UserCause')}"
-	 echo "${currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause')}"
-	 
-	 echo "build is success"
-	 }
-	 stage('deploy'){
-	 when{
-	 triggeredBy "SCMTrigger"
-	 }
-	 echo " test and deploy "
-	}
-	stage('email notify'){
-	emailext attachLog: true, body: 'job $job has been triggered', compressLog: true, subject: 'Email notification', to: 'prasadtechi6@gmail.com'
-	}
-}
-}
+pipeline {
+    agent none
+    stages {
+        stage('Example Build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Example Deploy') {
+            when {
+                triggeredBy "SCMTrigger"
+            }
+            steps {
+                echo 'Deploying'
+            }
+        }
+    }
 }
