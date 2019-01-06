@@ -33,4 +33,4 @@ echo "Jenkinsfile"
           echo "Deploying the code to QA"
            echo " job ran successfully"}
 }
-
+}
