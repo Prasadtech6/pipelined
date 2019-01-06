@@ -1,10 +1,13 @@
-stages {
-stage {
-When {
-expression { params.build_user_id == 'admin ' } 
-} 
-steps{
-Echo "${build_user_id}" 
-}
+node {
+  wrap([$class: 'BuildUser']) {
+    def user = env.BUILD_USER_ID
+    echo "${BUILD_USER_ID}"
+      if  (env.BUILD_USER_ID != 'admin'){
+       build()
+       }
+  }
+def build () {
+    stage 'Build'
+    echo " building the job"
 }
 }
