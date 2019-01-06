@@ -8,9 +8,10 @@ node {
       if  (env.BUILD_USER_ID != 'admin'){
        build()
        }
-def build () {
-    stage 'Build'
-    echo " building the job"
+       }
+     def  build () {
+         stage 'Build'
+          echo " building the job"
 }
 }
-}
+
