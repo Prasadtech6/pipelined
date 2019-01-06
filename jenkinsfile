@@ -5,7 +5,7 @@ node{
          checkout(scm)
 	 }
 	 stage('build'){
-	 echo "${currentBuild.buildCauses}" // same as currentBuild.getBuildCauses()
+	// echo "${currentBuild.buildCauses}" // same as currentBuild.getBuildCauses()
 	 echo "${currentBuild.getBuildCauses('hudson.model.Cause$UserCause')}"
 	 echo "${currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause')}"
 	 
