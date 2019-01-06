@@ -1,5 +1,6 @@
 pipeline{
 node{
+stages{
     stage('Checkout'){
         properties([pipelineTriggers([githubPush()])])
          checkout(scm)
@@ -20,5 +21,6 @@ node{
 	stage('email notify'){
 	emailext attachLog: true, body: 'job $job has been triggered', compressLog: true, subject: 'Email notification', to: 'prasadtechi6@gmail.com'
 	}
+}
 }
 }
