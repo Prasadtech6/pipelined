@@ -14,3 +14,4 @@ node {
          stage 'Build'
           echo "building the job"
 }
+}
