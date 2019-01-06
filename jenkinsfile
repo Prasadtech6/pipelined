@@ -7,6 +7,8 @@ node () {
     def user = env.BUILD_USER_ID
       if  (env.BUILD_USER_ID == 'admin'){
        build()
+       sonarcube() 
+       deploy() 
       }
 }
 }
@@ -15,12 +17,12 @@ node () {
           echo "building the job"
 }
 
-def sonarcube () {
+     def sonarcube () {
          stage 'sonarcube'
           echo "code analusys on the job"
 }
 
-def deploy () {
+     def deploy () {
          stage 'deploy'
           echo "Deploying the code to QA"
 }
