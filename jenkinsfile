@@ -12,6 +12,9 @@ node{
 	 echo "build is success"
 	 }
 	 stage('deploy'){
+	 when{
+	 triggeredBy "SCMTrigger"
+	 }
 	 echo " test and deploy "
 
 	}
