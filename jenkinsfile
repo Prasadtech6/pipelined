@@ -3,8 +3,6 @@
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
 
-}
-
 node () {
 echo "Jenkinsfile"
   wrap([$class: 'BuildUser']) {
