@@ -9,9 +9,9 @@ node {
        build()
        }
        }
-     def  build () {
+     
+  
+  def  build () {
          stage 'Build'
-          echo " building the job"
+          echo "building the job"
 }
-}
-
