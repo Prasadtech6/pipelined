@@ -25,5 +25,6 @@ node () {
      def deploy () {
          stage 'deploy'
           echo "Deploying the code to QA"
+          echo " job ran successfully"
 }
 
