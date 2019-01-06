@@ -1,4 +1,5 @@
 #!groovy
+
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
 node {
@@ -7,11 +8,9 @@ node {
     echo "${BUILD_USER_ID}"
       if  (env.BUILD_USER_ID != 'admin'){
        build()
-       }
-       }
-     
-  
-  def  build () {
+      }
+  }
+     def  build () {
          stage 'Build'
           echo "building the job"
 }
