@@ -16,7 +16,6 @@ node{
 	 triggeredBy "SCMTrigger"
 	 }
 	 echo " test and deploy "
-
 	}
 	stage('email notify'){
 	emailext attachLog: true, body: 'job $job has been triggered', compressLog: true, subject: 'Email notification', to: 'prasadtechi6@gmail.com'
