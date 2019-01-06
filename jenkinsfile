@@ -8,25 +8,8 @@ node () {
       if  (env.BUILD_USER_ID != 'admin'){
        build()
       }
-  }
-    else {
-       checkout()
-       build()
-       deploy()
-  }
 }
      def build () {
          stage 'Build'
           echo "building the job"
-}
-
-       def checkout () {
-         stage 'Build'
-          echo "checking out  the job"
-}
-
-       def deploy () {
-         stage 'Build'
-          echo "deploying the job"
-}
 }
