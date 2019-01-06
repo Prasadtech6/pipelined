@@ -1,18 +1,10 @@
-pipeline {
-    agent none
-    stages {
-        stage('Example Build') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-        stage('Example Deploy') {
-            when {
-                triggeredBy "SCMTrigger"
-            }
-            steps {
-                echo 'Deploying'
-            }
-        }
-    }
+Stages {
+Stage {
+When {
+expression { params.build_user_id == 'admin ' } 
+} 
+Steps{
+Echo "automatically triggered" 
+}
+}
 }
