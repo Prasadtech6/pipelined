@@ -2,6 +2,9 @@
 
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
+
+def causes = currentBuild.rawBuild.getCauses()
+
 node () {
 echo "Jenkinsfile"
   wrap([$class: 'BuildUser']) {
