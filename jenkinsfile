@@ -4,7 +4,7 @@ When {
 expression { params.build_user_id == 'admin ' } 
 } 
 Steps{
-Echo "automatically triggered" 
+Echo "${build_user_id}" 
 }
 }
 }
